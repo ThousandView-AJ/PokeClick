@@ -1,0 +1,9 @@
+.grid-item img {
+  width: 8rem;
+  height: 8rem;
+}
+.grid {
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  gap: 16px;
+}
