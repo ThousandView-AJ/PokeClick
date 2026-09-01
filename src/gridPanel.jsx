@@ -62,24 +62,49 @@ export default function GridPanel() {
   }
 
   return (
-    <div className="grid-panel">
-      <h1>NineCLICK</h1>
-      <p>
-        Score: {clickedIds.length} | Best: {bestScore}
-      </p>
-      <button onClick={loadNewGame}>Reset</button>
-      <div className="grid">
-        {currentList.map((item) => (
-          <div
-            className="grid-item"
-            key={item.id}
-            onClick={() => handleCardClick(item.id)} // Fix #4: click handler wired up
+    <>
+      <dialog close className="instructions-dialog">
+        <h2>Instructions</h2>
+        <p>
+          Click on a Pokémon to earn points. Don't click the same Pokémon twice!
+        </p>
+        <button
+          onClick={() => document.querySelector('.instructions-dialog').close()}
+        >
+          Close
+        </button>
+      </dialog>
+
+      <div className="grid-panel">
+        <h1>NineCLICK</h1>
+
+        <p>
+          Score: {clickedIds.length} | Best: {bestScore}
+        </p>
+        <div className="button-container">
+          <button
+            className="instructions"
+            onClick={() =>
+              document.querySelector('.instructions-dialog').showModal()
+            }
           >
-            <img src={item.photo} alt={item.name} />
-            <p>{item.name}</p>
-          </div>
-        ))}
+            Instructions
+          </button>
+          <button onClick={loadNewGame}>Reset</button>
+        </div>
+        <div className="grid">
+          {currentList.map((item) => (
+            <div
+              className="grid-item"
+              key={item.id}
+              onClick={() => handleCardClick(item.id)} // Fix #4: click handler wired up
+            >
+              <img src={item.photo} alt={item.name} />
+              <p>{item.name}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

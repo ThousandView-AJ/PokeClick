@@ -1,5 +1,5 @@
 h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   letter-spacing: 1px;
   margin: 0;
   padding-bottom: 6px;
@@ -48,10 +48,16 @@ button:hover {
 button:active {
   transform: translateY(0);
 }
+.button-container {
+  display: flex;
+  gap: 12px;
+  justify-self: end;
+  align-self: center;
+}
 
 .grid-panel {
   display: grid;
-  grid-template: auto 1fr / 2fr 1fr 1fr;
+  grid-template: auto 1fr / 2fr 1fr 2fr;
   gap: 16px;
 }
 
@@ -109,4 +115,49 @@ button:active {
   font-size: 1rem;
   margin-top: 8px;
   align-self: center;
+}
+.instructions-dialog {
+  background: var(--panel-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  max-width: 420px;
+  width: 90%;
+}
+
+.instructions-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.instructions-dialog h2 {
+  margin: 0 0 16px 0;
+  font-size: 1.4rem;
+  background: linear-gradient(90deg, var(--orange), var(--green), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.instructions-dialog p {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin: 0 0 20px 0;
+}
+
+.instructions-dialog button {
+  justify-self: start;
+}
+
+.button-container {
+  display: flex;
+  gap: 12px;
+  align-self: center;
+  justify-self: end;
 }
