@@ -62,11 +62,12 @@ export default function GridPanel() {
   }
 
   return (
-    <div>
-      {/* <p>
+    <div className="grid-panel">
+      <h1>NineCLICK</h1>
+      <p>
         Score: {clickedIds.length} | Best: {bestScore}
       </p>
-      <button onClick={loadNewGame}>Reset</button> */}
+      <button onClick={loadNewGame}>Reset</button>
       <div className="grid">
         {currentList.map((item) => (
           <div
