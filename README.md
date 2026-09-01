@@ -1,16 +1,27 @@
-# React + Vite
+# NineCLICK
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A memory-click game built with React — click Pokémon cards in any order, but don't click the same one twice. Cards reshuffle after every click to keep you on your toes.
 
-Currently, two official plugins are available:
+**Live demo:** https://nine-click.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How it works
 
-## React Compiler
+- 9 random Pokémon are fetched from [PokéAPI](https://pokeapi.co/) on load
+- Click any card to score a point — the grid reshuffles
+- Click a Pokémon you've already clicked this round, and it's game over
+- Your best score is tracked until you refresh
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- React + Vite
+- PokéAPI (Pokémon data + artwork)
+- Deployed on Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run locally
+
+```bash
+git clone https://github.com/ThousandView-AJ/nineClick.git
+cd nineClick
+npm install
+npm run dev
+```
