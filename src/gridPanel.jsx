@@ -41,7 +41,7 @@ export default function GridPanel() {
   const [bestScore, setBestScore] = useState(0);
 
   async function loadNewGame() {
-    const nineRandom = await fetchPokemonData(9);
+    const nineRandom = await fetchPokemonData(12);
     setCurrentList(nineRandom);
     setClickedIds([]);
   }
